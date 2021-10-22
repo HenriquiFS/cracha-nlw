@@ -1,0 +1,79 @@
+/* CSS -> Cascate Stylesheet
+    É cascata pois os elmentos que vem por último tem dominância sobre os primeiro
+    portanto se tiverem dois h1 o que estiver mais embaixo é o que vai dominar
+*/
+*{
+  margin: 0;
+}
+html,body{
+  --black: hsl(240, 6%, 13%);
+  --grey: hsl(240, 9%, 89%);
+
+  height: 100%;
+  font-family: 'Roboto', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+/*
+  Ao colocar dois elementos e uma vírgula igual acima, você esta referenciando os dois
+*/
+body{
+  display: grid;
+  place-items: center;
+}
+main{
+  background: url(images/background.png);
+  width: 375px;
+  height: 812px;
+}
+.container{
+  max-width: 250px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+
+  color: var(--grey);
+}
+.avatar{
+  width: 10rem;
+  margin: 11.5rem auto 0;
+  position: relative;
+}
+.avatar span{
+  position: absolute;
+  top: -15px;
+  z-index: 1;
+}
+.avatar > img{
+  width: 10rem;
+  height: 11.5rem;
+  object-fit: cover;
+  clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
+  /*
+    Quando vc coloca o > img signica que ele vai pegar a imagem de nível mais acima
+    o clip-path é o responsável por deixar a imagem em formato de polígono
+    para calcular as medidas use a seguinte ferramente: https://bennettfeely.com/clippy/
+  */
+}
+h1{
+  font-size: 1.5rem;
+  margin-top: 1.5rem;
+}
+a{
+  color: var(--grey);
+  text-decoration: none;
+  margin-top: 0.25rem;
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+}
+p{
+  margin-top: 2rem;
+}
+ul{
+  margin-top: 4rem;
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+}
